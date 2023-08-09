@@ -14,7 +14,7 @@ export function TerminalOutput({
 }): JSX.Element {
   return (
     <TerminalShellWrapper isMessageBelow={isMessageBelow}>
-      <div className="p-4 pt-2 overflow-x-auto">
+      <div className="overflow-x-auto p-4 pt-2">
         <div className="flex items-center">
           <p className="mt-0.5">
             {path && (
@@ -26,7 +26,7 @@ export function TerminalOutput({
           </p>
           <p className="typing mt-0.5 flex-1 pl-2">{command}</p>
         </div>
-        <div className="flex not-prose">{content}</div>
+        <div className="not-prose flex">{content}</div>
       </div>
     </TerminalShellWrapper>
   );

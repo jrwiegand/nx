@@ -107,11 +107,11 @@ export function FeatureAi(): JSX.Element {
 
   return (
     <div
-      className="p-2 mx-auto flex h-full w-full flex-col"
+      className="mx-auto flex h-full w-full flex-col p-2"
       id="wrapper"
       data-testid="wrapper"
     >
-      <div className="w-full flex">
+      <div className="flex w-full">
         <input
           id="search"
           name="search"
@@ -146,14 +146,14 @@ export function FeatureAi(): JSX.Element {
         {warning}
       </div>
       {loading ? (
-        <div className="p-4 max-w-none">
+        <div className="max-w-none p-4">
           <h1>Thinking...</h1>
         </div>
       ) : null}
 
       {chatHistory ? (
-        <div className="p-4 bg-gray-100">
-          <div className="mx-auto bg-white p-6 rounded shadow">
+        <div className="bg-gray-100 p-4">
+          <div className="mx-auto rounded bg-white p-6 shadow">
             {chatHistory.length > 30 && (
               <div>
                 You've reached the maximum message history limit. Some previous
@@ -163,10 +163,10 @@ export function FeatureAi(): JSX.Element {
             <p>HISTORY</p>
             {chatHistory.map((chatItem, index) => (
               <div key={index} className="mb-4 border-b pb-2">
-                <strong className="text-gray-700 capitalize">
+                <strong className="capitalize text-gray-700">
                   {chatItem.role}:
                 </strong>
-                <p className="text-gray-600 mt-1">{chatItem.content}</p>
+                <p className="mt-1 text-gray-600">{chatItem.content}</p>
               </div>
             ))}
           </div>
@@ -174,7 +174,7 @@ export function FeatureAi(): JSX.Element {
       ) : null}
       {finalResult && !loading && !error ? (
         <>
-          <div className="p-4 max-w-none prose prose-slate dark:prose-invert">
+          <div className="prose prose-slate dark:prose-invert max-w-none p-4">
             {finalResult}
           </div>
           {!feedbackSent && (
